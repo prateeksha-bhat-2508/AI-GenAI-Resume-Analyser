@@ -241,6 +241,29 @@ animation:shine 6s infinite;
 0%{left:-75%;}
 100%{left:130%;}
 }
+.job-card{
+background:rgba(123,44,191,0.15);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:14px;
+padding:18px;
+text-align:center;
+margin:8px 0;
+font-size:16px;
+font-weight:600;
+box-shadow:0 0 15px rgba(157,78,221,0.25);
+transition:0.3s;
+}
+
+.job-card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(157,78,221,0.6);
+}
+
+.job-icon{
+font-size:28px;
+display:block;
+margin-bottom:8px;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -267,7 +290,13 @@ unsafe_allow_html=True
 
     analyze = st.button("Analyze Resume")
 
-    skills = load_skills("data/skills.json")
+    import os
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    skills_path = os.path.join(BASE_DIR, "data", "skills.json")
+
+    skills = load_skills(skills_path)
 
     if analyze and uploaded_file and job_role:
 
@@ -438,36 +467,40 @@ unsafe_allow_html=True
         gap_html += "</div>"
 
         st.markdown(gap_html, unsafe_allow_html=True)
-        job_html = """
+        st.markdown("""
         <div class="analysis-box">
-
         <div class="analysis-header">
         AI Career Recommendations
         </div>
-        """
+        </div>
+        """, unsafe_allow_html=True)
 
-        if len(recommended_jobs) > 0:
+        if recommended_jobs:
 
-            job_html += "<table class='analysis-table'>"
+            cols = st.columns(3)
 
-            for job in recommended_jobs:
-                job_html += f"""
-                <tr>
-                <td><span class="tech-bullet">🚀</span>{job}</td>
-                </tr>
-                """
+            for idx, job in enumerate(recommended_jobs):
 
-            job_html += "</table>"
+                with cols[idx % 3]:
+
+                    st.markdown(
+                        f"""
+                        <div class="job-card">
+                            <span class="job-icon">🚀</span>
+                            {job}
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
 
         else:
-            job_html += "Not enough skill signals detected to recommend roles."
 
-        job_html += "</div>"
+            st.warning(
+                "Not enough skill signals detected to recommend roles."
+            )
 
-        st.markdown(job_html, unsafe_allow_html=True)
 
-
-        st.subheader("Analysis Visualizations")
+            st.subheader("Analysis Visualizations")
 
         colA, colB = st.columns(2)
 
