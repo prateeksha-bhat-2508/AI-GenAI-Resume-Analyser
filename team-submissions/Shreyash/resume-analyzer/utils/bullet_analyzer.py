@@ -1,6 +1,11 @@
 import spacy
 
-nlp=spacy.load("en_core_web_sm")
+import spacy
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except:
+    nlp = spacy.blank("en")
 
 def analyze_bullets(text):
 
