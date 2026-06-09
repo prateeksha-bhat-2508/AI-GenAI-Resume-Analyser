@@ -1,8 +1,14 @@
 import json
 import spacy
 
-nlp = spacy.load("en_core_web_sm")
+import spacy
 
+try:
+    nlp = spacy.load("en_core_web_sm")
+
+except:
+
+    nlp = spacy.blank("en")
 def load_skills(path):
     with open(path,"r") as f:
         data=json.load(f)
