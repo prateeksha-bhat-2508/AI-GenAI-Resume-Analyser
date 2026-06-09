@@ -289,7 +289,7 @@ pip install -r requirements.txt
 ### Download NLP Models
 
 ```bash
-python -m spacy download en_core_web_sm
+python -m spacy download en
 ```
 
 ---
