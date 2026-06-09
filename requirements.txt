@@ -6,6 +6,5 @@ pypdf==6.13.1
 spacy==3.8.11
 scikit-learn
 plotly==6.3.0
-sentence-transformers==5.1.0
 torch
 transformers

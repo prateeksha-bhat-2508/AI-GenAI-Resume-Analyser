@@ -25,11 +25,16 @@ def extract_skills(text,skills):
         if word in skills:
             found.add(word)
 
-    for chunk in doc.noun_chunks:
-        phrase=chunk.text.lower()
+    try:
+        for chunk in doc.noun_chunks:
 
-        if phrase in skills:
-            found.add(phrase)
+            phrase = chunk.text.lower()
+
+            if phrase in skills:
+                found.add(phrase)
+
+    except:
+        pass
 
     return list(found)
 
