@@ -232,13 +232,13 @@ GenAI-Resume-Analyzer/
 
 ## 📸 Screenshots
 
-### Dashboard View
+### Analytics
 
 ![Dashboard](screenshots/SS1.png)
 
 ---
 
-### Candidate Ranking System
+### Recommendations
 
 ![Ranking](screenshots/SS2.png)
 
