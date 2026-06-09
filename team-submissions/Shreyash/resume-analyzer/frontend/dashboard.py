@@ -20,97 +20,247 @@ def run():
         page_icon="📄"
     )
 
+    st.markdown("""
+<style>
+
+/* Galaxy Background */
+
+.stApp{
+background:
+radial-gradient(circle at 20% 20%, #5b0f4a 0%, transparent 40%),
+radial-gradient(circle at 80% 30%, #3c096c 0%, transparent 40%),
+radial-gradient(circle at 50% 80%, #240046 0%, transparent 40%),
+linear-gradient(180deg,#0d001a,#020006);
+color:white;
+}
+
+/* Button */
+
+.stButton>button{
+background:linear-gradient(90deg,#800f2f,#7b2cbf);
+border-radius:30px;
+color:white;
+}
+
+/* Skill Chips */
+
+
+                .skill-chip{
+display:inline-block;
+padding:8px 14px;
+margin:6px;
+background:linear-gradient(90deg,#7b2cbf,#9d4edd);
+border-radius:30px;
+font-size:14px;
+transition:all 0.25s ease;
+box-shadow:0 0 8px rgba(157,78,221,0.6);
+}
+
+.skill-chip:hover{
+transform: translateY(-6px) scale(1.08);
+box-shadow:0 0 20px rgba(200,120,255,1);
+}
+
+
+/* futuristic analysis box */
+
+.analysis-box{
+border:1px solid rgba(255,255,255,0.15);
+border-radius:14px;
+padding:20px;
+margin-top:20px;
+background:rgba(0,0,0,0.35);
+backdrop-filter: blur(10px);
+box-shadow:0 0 25px rgba(140,80,255,0.3);
+}
+
+/* metallic header */
+
+.analysis-header{
+font-size:20px;
+font-weight:600;
+padding:10px 15px;
+margin-bottom:15px;
+border-radius:8px;
+
+background:linear-gradient(
+90deg,
+#d4d4d4,
+#f5f5f5,
+#bcbcbc,
+#ffffff,
+#d4d4d4
+);
+
+color:black;
+letter-spacing:1px;
+}
+
+/* table styling */
+
+.analysis-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.analysis-table td{
+border:1px solid rgba(255,255,255,0.2);
+padding:8px;
+}
+
+/* tech bullet */
+
+.tech-bullet{
+color:#c77dff;
+font-weight:600;
+margin-right:8px;
+}
+                
+                .section-card{
+border:1px solid rgba(255,255,255,0.15);
+border-radius:14px;
+padding:18px;
+background:rgba(0,0,0,0.35);
+box-shadow:0 0 20px rgba(140,80,255,0.25);
+margin-top:15px;
+height:100%;
+display:flex;
+flex-direction:column;
+}
+
+.section-header{
+font-size:18px;
+font-weight:600;
+padding:8px 12px;
+margin-bottom:12px;
+border-radius:6px;
+
+background:linear-gradient(
+90deg,
+#cfcfcf,
+#f2f2f2,
+#cfcfcf
+);
+
+color:black;
+}
+
+.stat-ball{
+display:inline-block;
+width:80px;
+height:80px;
+border-radius:50%;
+background:linear-gradient(145deg,#7b2cbf,#9d4edd);
+color:white;
+font-size:22px;
+font-weight:bold;
+text-align:center;
+line-height:80px;
+margin:10px;
+box-shadow:0 0 18px rgba(157,78,221,0.7);
+}
+
+.stat-label{
+text-align:center;
+font-size:12px;
+margin-top:4px;
+color:#e0e0e0;
+}
+                /* Galaxy title box */
+
+.hero-box{
+position:relative;
+padding:30px 20px;
+border-radius:18px;
+margin-bottom:25px;
+text-align:center;
+
+/* galaxy background */
+background:
+radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 2px, transparent 3px),
+radial-gradient(circle at 70% 20%, rgba(255,255,255,0.2) 1px, transparent 3px),
+radial-gradient(circle at 40% 80%, rgba(255,255,255,0.15) 2px, transparent 4px),
+linear-gradient(135deg,#240046,#5a189a,#3c096c);
+
+box-shadow:
+0 0 30px rgba(157,78,221,0.6),
+inset 0 0 20px rgba(255,255,255,0.08);
+
+border:2px solid rgba(255,255,255,0.25);
+}
+
+/* shiny metallic title */
+
+.hero-title{
+font-size:42px;
+font-weight:800;
+
+background:linear-gradient(
+90deg,
+#dcdcdc,
+#ffffff,
+#bfbfbf,
+#ffffff,
+#dcdcdc
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+letter-spacing:1px;
+}
+
+/* subtitle */
+
+.hero-subtitle{
+color:#d0cde1;
+font-size:16px;
+margin-top:8px;
+}
+
+/* shine animation */
+
+.hero-box:before{
+content:"";
+position:absolute;
+top:0;
+left:-75%;
+width:50%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.3),
+transparent
+);
+transform:skewX(-20deg);
+animation:shine 6s infinite;
+}
+
+@keyframes shine{
+0%{left:-75%;}
+100%{left:130%;}
+}
+</style>
+""", unsafe_allow_html=True)
+
     st.markdown(
-        """
-        <style>
+"""
+<div class="hero-box">
 
-        .stApp {
-            background: linear-gradient(180deg,#0f172a,#020617);
-            color: #e2e8f0;
-        }
+<div class="hero-title">
+AI Resume Analyzer
+</div>
 
-        h1, h2, h3 {
-            color:#f8fafc;
-            font-weight:600;
-            letter-spacing:0.3px;
-        }
+<div class="hero-subtitle">
+Upload your resume and get AI powered ATS analysis, skill gap insights,
+and career recommendations.
+</div>
 
-        .stButton>button {
-            background: linear-gradient(90deg,#38bdf8,#0284c7);
-            border:none;
-            padding:0.6rem 1.2rem;
-            border-radius:8px;
-            color:white;
-            font-weight:600;
-        }
-
-        .stTextInput input {
-            background:#020617 !important;
-            border:1px solid #334155 !important;
-            border-radius:6px;
-            color:#ffffff !important;
-        }
-
-        label {
-            color:#e2e8f0 !important;
-            font-weight:500;
-        }
-
-        [data-testid="stFileUploader"] {
-            background:#020617 !important;
-            border:1px solid #334155 !important;
-            border-radius:10px;
-            padding:1rem;
-        }
-
-        [data-testid="stFileUploaderDropzone"] {
-            background:#020617 !important;
-            border:2px dashed #334155 !important;
-            color:#ffffff !important;
-        }
-
-        [data-testid="stFileUploaderDropzone"] * {
-            color:#ffffff !important;
-        }
-
-        [data-testid="stFileUploaderFile"] {
-            color:#ffffff !important;
-        }
-
-        .stProgress > div > div > div {
-            background-color:#38bdf8;
-        }
-
-        [data-testid="stFileUploader"] button {
-        background: linear-gradient(90deg,#38bdf8,#0284c7) !important;
-        color: white !important;
-        border: none !important;
-        border-radius: 8px !important;
-        padding: 0.45rem 1rem !important;
-        font-weight: 600 !important;
-        }
-
-        [data-testid="stFileUploader"] button:hover {
-        background: linear-gradient(90deg,#0ea5e9,#0369a1) !important;
-        }
-
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
-    """
-    <div style="text-align:center;padding:10px 0 30px 0">
-    <h1 style="font-size:42px">AI Resume Analyzer</h1>
-    <p style="color:#94a3b8;font-size:16px">
-    Upload your resume and get AI powered ATS analysis, skill gap insights,
-    and career recommendations.
-    </p>
-    </div>
-    """,
-    unsafe_allow_html=True
-    )
+</div>
+""",
+unsafe_allow_html=True
+)
 
     uploaded_file = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
     job_role = st.text_input("Enter Target Job Role")
@@ -248,32 +398,74 @@ def run():
         st.progress(int(coverage * 100))
         st.write(str(round(coverage * 100, 2)) + " % role skill coverage")
 
-        st.subheader("Detected Skills")
-        skills_text = "  ".join([f"`{s}`" for s in sorted(found_skills)])
-        st.markdown(skills_text)
+        skill_html = ""
+        for s in sorted(found_skills):
+            skill_html += f'<span class="skill-chip">{s}</span>'
 
+        st.markdown(skill_html, unsafe_allow_html=True)
         st.subheader("Missing Skills")
-        missing_text = "  ".join([f"`{s}`" for s in missing])
-        st.markdown(missing_text)
 
-        st.subheader("AI Skill Gap Analysis")
-        st.write("Matched Skills:", match_count, "/", total_required)
+        missing_html = ""
+        for s in missing:
+            missing_html += f'<span class="skill-chip">{s}</span>'
+
+        st.markdown(missing_html, unsafe_allow_html=True)
+
+        gap_html = f"""
+        <div class="analysis-box">
+
+        <div class="analysis-header">
+        AI Skill Gap Analysis
+        </div>
+
+        <table class="analysis-table">
+        <tr>
+        <td>Matched Skills</td>
+        <td>{match_count} / {total_required}</td>
+        </tr>
+        </table>
+        """
 
         if len(gap_skills) > 0:
-            st.write("Recommended Skills To Learn:")
-            for s in gap_skills:
-                st.markdown("• " + s)
-        else:
-            st.write("Your resume already covers the required skill set.")
+            gap_html += "<br><b>Recommended Skills To Learn</b><br>"
 
-        st.subheader("AI Career Recommendations")
+            for s in gap_skills:
+                gap_html += f'<div><span class="tech-bullet">⚙</span>{s}</div>'
+
+        else:
+            gap_html += "<br>Your resume already covers the required skill set."
+
+        gap_html += "</div>"
+
+        st.markdown(gap_html, unsafe_allow_html=True)
+        job_html = """
+        <div class="analysis-box">
+
+        <div class="analysis-header">
+        AI Career Recommendations
+        </div>
+        """
 
         if len(recommended_jobs) > 0:
-            st.write("Based on your detected skills you may be suitable for:")
+
+            job_html += "<table class='analysis-table'>"
+
             for job in recommended_jobs:
-                st.markdown("• " + job)
+                job_html += f"""
+                <tr>
+                <td><span class="tech-bullet">🚀</span>{job}</td>
+                </tr>
+                """
+
+            job_html += "</table>"
+
         else:
-            st.write("Not enough skill signals detected to recommend roles.")
+            job_html += "Not enough skill signals detected to recommend roles."
+
+        job_html += "</div>"
+
+        st.markdown(job_html, unsafe_allow_html=True)
+
 
         st.subheader("Analysis Visualizations")
 
@@ -309,26 +501,95 @@ def run():
             ax.set_xticklabels(labels)
             st.pyplot(fig)
 
-        st.subheader("AI Resume Section Detection")
+        st.markdown("---")
 
-        for sec in sections_detected:
-            if sections_detected[sec]:
-                st.write("✓ " + sec.capitalize())
-            else:
-                st.write("✗ " + sec.capitalize())
+        # Detection and Statistics side by side
+        col1, col2 = st.columns(2)
 
-        st.subheader("Resume Statistics")
+        # -------- Resume Section Detection -------- #
+        with col1:
 
-        st.write("Quantified Achievements Detected:", achievement_count)
-        st.write("Strong Bullet Points Detected:", bullet_count)
+            detect_html = """
+            <div class="section-card" style="height:100%">
+            <div class="section-header">
+            Resume Section Detection
+            </div>
+            """
 
-        word_count = len(text.split())
+            for sec in sections_detected:
 
-        st.write("Total Words:", word_count)
-        st.write("Technical Skills Detected:", len(found_skills))
-        st.write("Missing Skills:", len(missing))
+                if sections_detected[sec]:
+                    detect_html += f"✓ {sec.capitalize()}<br>"
+                else:
+                    detect_html += f"✗ {sec.capitalize()}<br>"
 
-        st.subheader("Resume Improvement Suggestions")
+            detect_html += "</div>"
 
-        for s in suggestions:
-            st.markdown("• " + s)
+            st.markdown(detect_html, unsafe_allow_html=True)
+
+
+        # -------- Resume Statistics -------- #
+        with col2:
+
+            stats_html = f"""
+            <div class="section-card" style="height:100%">
+
+            <div class="section-header">
+            Resume Statistics
+            </div>
+
+            <div style="
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:10px;
+                justify-items:center;
+                align-items:center;
+            ">
+
+            <div>
+            <div class="stat-ball">{achievement_count}</div>
+            <div class="stat-label">Achievements</div>
+            </div>
+
+            <div>
+            <div class="stat-ball">{bullet_count}</div>
+            <div class="stat-label">Bullets</div>
+            </div>
+
+            <div>
+            <div class="stat-ball">{len(found_skills)}</div>
+            <div class="stat-label">Skills</div>
+            </div>
+
+            <div>
+            <div class="stat-ball">{len(missing)}</div>
+            <div class="stat-label">Missing</div>
+            </div>
+
+            </div>
+            </div>
+            """
+
+            st.markdown(stats_html, unsafe_allow_html=True)
+        # -------- Resume Suggestions (Below) -------- #
+
+        suggest_html = """
+        <div class="section-card">
+
+        <div class="section-header">
+        Resume Suggestions
+        </div>
+        """
+
+        if len(suggestions) > 0:
+
+            for s in suggestions:
+                suggest_html += f"🧠 {s}<br><br>"
+
+        else:
+            suggest_html += "No suggestions detected."
+
+        suggest_html += "</div>"
+
+        st.markdown(suggest_html, unsafe_allow_html=True)
+        
