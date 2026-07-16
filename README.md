@@ -308,7 +308,7 @@ ollama run mistral
 
 ---
 
-## ▶ Running the Project
+## Running the Project
 
 Start Streamlit Application:
 
