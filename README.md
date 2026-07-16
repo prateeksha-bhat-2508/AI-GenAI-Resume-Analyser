@@ -3,7 +3,7 @@ BMSCE XCEL COE Hackathon
 
 # GenAI Resume Analyzer & Candidate Ranking System
 
-## 📌 Overview
+## Overview
 
 GenAI Resume Analyzer is an AI-powered recruitment assistant designed to evaluate resumes against a given Job Description (JD), generate ATS-style scores, identify skill gaps, provide personalized recommendations, and rank multiple candidates based on their suitability for a role.
 
@@ -11,7 +11,7 @@ The system combines NLP, Semantic Similarity Models, ATS Scoring Logic, and Gene
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 ### Resume Analysis
 - Upload Resume (PDF)
@@ -47,7 +47,7 @@ The system combines NLP, Semantic Similarity Models, ATS Scoring Logic, and Gene
 
 ---
 
-## 🧠 AI & NLP Components
+## AI & NLP Components
 
 ### NLP Processing
 Used for:
@@ -103,7 +103,7 @@ Used for:
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 ```text
                 ┌───────────────────┐
@@ -153,7 +153,7 @@ Dashboard & Visualizations
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 ### Frontend
 
@@ -194,7 +194,7 @@ Dashboard & Visualizations
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 GenAI-Resume-Analyzer/
@@ -230,7 +230,7 @@ GenAI-Resume-Analyzer/
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Analytics
 
@@ -324,7 +324,7 @@ http://localhost:8501
 
 ---
 
-## 📈 ATS Score Calculation
+## ATS Score Calculation
 
 The ATS score is computed using a weighted scoring system:
 
@@ -342,7 +342,7 @@ ATS Score =
 
 ---
 
-## 🎯 Candidate Ranking Workflow
+## Candidate Ranking Workflow
 
 ```text
 Upload Multiple Resumes
@@ -372,7 +372,7 @@ Bottom Candidates
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - Resume Rewrite Generator
 - Interview Question Generator
@@ -385,7 +385,7 @@ Bottom Candidates
 
 ---
 
-## 👥 Team Contributions
+## Team Contributions
 
 ### NLP & Resume Parsing
 - Skill Extraction
@@ -408,7 +408,5 @@ Bottom Candidates
 - Candidate Ranking Dashboard
 
 ---
-
-## 📜 License
 
 This project was developed for academic and hackathon purposes.
